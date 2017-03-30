@@ -2,6 +2,7 @@ package net.blustone.eightball.model;
 
 import net.blustone.eightball.EightballParser;
 
+import java.util.List;
 import java.util.Map;
 
 public class Image implements HtmlGeneratable {
@@ -17,7 +18,7 @@ public class Image implements HtmlGeneratable {
     }
 
     @Override
-    public String toHtml() {
+    public String toHtml(List<Page> pages) {
         return String.format("<img width='%s' height='%s' src='%s' alt='%s' />", w, h, imagePath, alt);
     }
 

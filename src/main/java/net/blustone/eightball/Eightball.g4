@@ -6,7 +6,7 @@
 
 grammar Eightball;
 
-IMPLICIT_PAGE: ('page' ('0'..'9'));
+IMPLICIT_PAGE: ('page' ('1'..'9')('0'..'9')*);
 
 COLON: ':';
 SEMI: ';';
@@ -21,6 +21,7 @@ FLASH: 'flash';
 TEXT: 'text';
 LOG: 'log';
 SCHEME: 'scheme';
+LINK: 'link';
 
 ID  :	('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')*
     ;
@@ -66,6 +67,7 @@ endStatement: END;
 imageStatement: IMAGE STRING propertySet?;
 flashStatement: FLASH STRING propertySet?;
 textStatement: TEXT STRING;
+linkStatement: LINK (ID | IMPLICIT_PAGE);
 
 logStatement: ID COLON STRING;
 schemeStatement: ID COLON STRING;
@@ -74,7 +76,7 @@ scheme: SCHEME ID COLON (schemeStatement)* END;
 
 log: LOG STRING propertySet? COLON (logStatement)* END;
 
-inPageStatement: imageStatement | flashStatement | textStatement | log;
+inPageStatement: linkStatement | imageStatement | flashStatement | textStatement | log;
 
 property: ID COLON (ID | STRING | INT);
 propertySet: LP property (COMMA property)* RP;

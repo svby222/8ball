@@ -29,7 +29,7 @@ public class Log implements HtmlGeneratable, BlockStatement<EightballParser.LogS
     }
 
     @Override
-    public String toHtml() {
+    public String toHtml(List<Page> pages) {
         String buttonId = "showLog-" + id;
         String divId = "hsLog-" + id;
         String generatedText = statements.stream()

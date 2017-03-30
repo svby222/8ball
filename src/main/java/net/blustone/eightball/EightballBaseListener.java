@@ -1,4 +1,5 @@
-package net.blustone.eightball;// Generated from E:\Projects\Other\eightball\src\main\resources\Eightball.g4 by ANTLR 4.1
+// Generated from G:\Projects\Other\_8ball\src\main\java\net\blustone\eightball\Eightball.g4 by ANTLR 4.1
+package net.blustone.eightball;
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.misc.NotNull;
@@ -153,6 +154,24 @@ public class EightballBaseListener implements EightballListener {
 	 * The default implementation does nothing.
 	 */
 	@Override public void exitAnything(@NotNull EightballParser.AnythingContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override
+	public void enterLinkStatement(@NotNull EightballParser.LinkStatementContext ctx) {
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override
+	public void exitLinkStatement(@NotNull EightballParser.LinkStatementContext ctx) {
+	}
 
 	/**
 	 * {@inheritDoc}

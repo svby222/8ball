@@ -2,6 +2,7 @@ package net.blustone.eightball.model;
 
 import net.blustone.eightball.EightballParser;
 
+import java.util.List;
 import java.util.Map;
 
 public class Flash implements HtmlGeneratable {
@@ -18,7 +19,7 @@ public class Flash implements HtmlGeneratable {
     }
 
     @Override
-    public String toHtml() {
+    public String toHtml(List<Page> pages) {
         return String.format(TEMPLATE, w, h, path);
     }
 

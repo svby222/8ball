@@ -1,4 +1,5 @@
-package net.blustone.eightball;// Generated from E:\Projects\Other\eightball\src\main\resources\Eightball.g4 by ANTLR 4.1
+// Generated from G:\Projects\Other\_8ball\src\main\java\net\blustone\eightball\Eightball.g4 by ANTLR 4.1
+package net.blustone.eightball;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -127,6 +128,20 @@ public interface EightballListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitAnything(@NotNull EightballParser.AnythingContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link EightballParser#linkStatement}.
+	 *
+	 * @param ctx the parse tree
+	 */
+	void enterLinkStatement(@NotNull EightballParser.LinkStatementContext ctx);
+
+	/**
+	 * Exit a parse tree produced by {@link EightballParser#linkStatement}.
+	 *
+	 * @param ctx the parse tree
+	 */
+	void exitLinkStatement(@NotNull EightballParser.LinkStatementContext ctx);
 
 	/**
 	 * Enter a parse tree produced by {@link EightballParser#property}.

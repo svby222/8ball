@@ -8,12 +8,10 @@ import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
-import javax.rmi.CORBA.Util;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class EightBallScript {
 
@@ -100,6 +98,16 @@ public class EightBallScript {
             public void enterLogStatement(EightballParser.LogStatementContext ctx) {
                 log.addStatement(ctx);
             }
+
+            @Override
+            public void enterLinkStatement(EightballParser.LinkStatementContext ctx) {
+                String s = ctx.ID() == null
+                        ? ctx.IMPLICIT_PAGE() == null
+                        ? null
+                        : ctx.IMPLICIT_PAGE().getText()
+                        : ctx.ID().getText();
+                current.addGeneratable(new Link(s));
+            }
         };
 
         walker.walk(listener, context);
@@ -110,9 +118,10 @@ public class EightBallScript {
     public void writeToFolder(File folder) throws IOException {
         Files.copy(getClass().getResourceAsStream("/8ball.css"), new File(folder, "8ball.css").toPath(), StandardCopyOption.REPLACE_EXISTING);
         Files.copy(getClass().getResourceAsStream("/8ball.js"), new File(folder, "8ball.js").toPath(), StandardCopyOption.REPLACE_EXISTING);
-        for (Page p : interpret())
+        List<Page> pages = interpret();
+        for (Page p : pages)
             try (PrintWriter w = new PrintWriter(new File(folder, p.getId() + ".html"))) {
-                w.println(p.toHtml());
+                w.println(p.toHtml(pages));
             }
     }
 

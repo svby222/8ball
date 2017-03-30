@@ -2,7 +2,6 @@ package net.blustone.eightball.model;
 
 import net.blustone.eightball.EightballParser;
 
-import javax.swing.text.html.HTML;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -28,9 +27,9 @@ public class Page implements HtmlGeneratable {
     }
 
     @Override
-    public String toHtml() {
+    public String toHtml(List<Page> pages) {
         return String.format(TEMPLATE, title, gens.stream()
-                .map(HtmlGeneratable::toHtml)
+                .map(g -> g.toHtml(pages))
                 .collect(Collectors.joining("\n")));
     }
 

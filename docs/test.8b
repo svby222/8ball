@@ -14,5 +14,13 @@ page (title: "Vriska: Do something."):
 	log "Pesterlog" (colors: default):
 		AG: "Sample text"
 	end
+	
+	link page2
 
+end
+
+page (title: "The second page."):
+
+	text "Sample text"
+	
 end
