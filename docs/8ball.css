@@ -1,0 +1,51 @@
+body {
+    height: 100%;
+    background-color: #C6C6C6;
+}
+
+div#eightballMain {
+    margin: auto;
+    text-align: center;
+    width: 625px;
+    background-color: #EEEEEE;
+    height: 100%;
+    padding: 5px 20px 20px 20px;
+}
+
+h1#eightballTitle {
+    margin: 0 auto;
+    padding: 10px;
+    font-family: "Courier New", monospace;
+    display: block;
+}
+
+object.flash {
+    display: block;
+    margin: auto;
+}
+
+div.logSection {
+    border: 1px dashed #808080;
+    padding: 2px;
+}
+
+div.logText {
+    font-family: "Courier New", monospace;
+    font-size: 10pt;
+    font-weight: bold;
+    text-align: left;
+    margin: 15px 30px 15px 30px;
+    display: none;
+}
+
+p.hsText {
+    font-family: "Courier New", monospace;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+a#eightballNextPage {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 18px;
+}
+
