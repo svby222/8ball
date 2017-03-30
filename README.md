@@ -11,7 +11,7 @@ end
 
 page (title: "Vriska: Do something."):
 
-	flash "animation.swf" (width: 300, height: 300)
+	flash "animation.swf" (width: 500, height: 280)
 	
 	image "vriska.png" (width: 500, height: auto)
 	

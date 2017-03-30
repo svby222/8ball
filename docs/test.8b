@@ -1,0 +1,18 @@
+scheme default:
+	AG: "#005682"
+	TG: "#e00707"
+end
+
+page (title: "Vriska: Do something."):
+
+	flash "animation.swf" (width: 500, height: 280)
+	
+	image "vriska.png" (width: 500, height: auto)
+	
+	text "Hello world!"
+	
+	log "Pesterlog" (colors: default):
+		AG: "Sample text"
+	end
+
+end

@@ -35,10 +35,10 @@ public class Log implements HtmlGeneratable, BlockStatement<EightballParser.LogS
         String generatedText = statements.stream()
                 .map((pair) -> {
                     if(pair.a == null) {
-                        return "???";
+                        return String.format("<span style='color:%s'>%s</span>", scheme.getMap().getOrDefault(pair.a, "black"), pair.b);
                     } else {
-                        return String.format("<span style='color:%s'>%s</span>",
-                                scheme.getMap().getOrDefault(pair.a, "black"), pair.b);
+                        return String.format("<span style='color:%s'>%s: %s</span>",
+                                scheme.getMap().getOrDefault(pair.a, "black"), pair.a, pair.b);
                     }
                 }).collect(Collectors.joining("<br />"));
         return String.format(TEMPLATE, buttonId, divId, name, name, divId, generatedText);
