@@ -1,4 +1,7 @@
-# 8ball
+# 8ball scripts
+
+(This project is not affiliated with mspaintadventures.com and is simply a "fan project".)
+
 ### Demo
 ```text
 scheme default:
@@ -26,5 +29,9 @@ end
 EightBallScript script = EightBallScript.from("some/file.8b");
 script.writeToFolder(new File("some/directory"));
 ```
+
+#### Demo result
+Results are available [here](https://1blustone.github.io/8ball/).
+Flash animation credits go to [Davdus](https://github.com/Davdus)!
 
 That's all you need. CSS and JS will be copied to this directory as well.
